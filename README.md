@@ -1,4 +1,4 @@
-# How does `GettingAndCleaningData.R` work?
+# How does `run_analysis.R` work?
 
 The script requires two packages in addition to the base R packages: `dplyr` and `readr`.
 
