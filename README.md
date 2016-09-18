@@ -19,5 +19,6 @@ The script is divided into differenct components that serve different purposes:
 * `extracting and summarizing` :
   - Extracts the relevant values of mean and standard deviation
   - Summarizes all the data by the activity
+  - Renames the  variables so that they are more understandable
 
 
