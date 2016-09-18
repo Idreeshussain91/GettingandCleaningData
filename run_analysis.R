@@ -48,11 +48,13 @@ mergedDataset <- rbind(completeTrain, completeTest)
 
 #extracting and summarizing
 
-summarized <- mergedDataset %>% select(grep("activity|std|mean",names(mergedDataset), ignore.case = TRUE)) %>% 
-              group_by(activity) %>% summarize_each(funs(mean))
+summarized <- mergedDataset %>% select(grep("subject|activity|std|mean",names(mergedDataset), ignore.case = TRUE)) %>% 
+              group_by(subject,activity) %>% summarize_each(funs(mean))
 
 names(summarized)<-gsub("^t", "time", names(summarized))
 names(summarized)<-gsub("^f", "frequency", names(summarized))
 names(summarized)<-gsub("Acc", "Accelerometer", names(summarized))
 names(summarized)<-gsub("Gyro", "Gyroscope", names(summarized))
 names(summarized)<-gsub("Mag", "Magnitude", names(summarized))
+
+write.table(summarized, file = "summarizeddata.txt", row.name = FALSE)
